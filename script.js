@@ -1,7 +1,5 @@
 
 document.addEventListener('DOMContentLoaded', function() {
-    const elementOrder = ['Fire', 'Water', 'Earth', 'Air', 'Light', 'Darkness', 'Metal', 'Nature', 'Ether', 'Chaos', 'Ice', 'Lightning', 'Psychic', 'Time', 'Cosmic', 'Toxic', 'Mystic'];
-    const formatOrder = ['Ranged', 'Summoner', 'Trap', 'Enhancer', 'Defender', 'Manipulator', 'Bane', 'Area Effect'];
     const cards = [
         {
             name: 'Inferno Blast',
@@ -678,6 +676,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function sortCards(sortValue) {
+        const elementOrder = ['Fire', 'Water', 'Earth', 'Air', 'Light', 'Darkness', 'Metal', 'Nature', 'Ether', 'Chaos', 'Ice', 'Lightning', 'Psychic', 'Time', 'Cosmic', 'Toxic', 'Mystic'];
+        const formatOrder = ['Ranged', 'Summoner', 'Trap', 'Enhancer', 'Defender', 'Manipulator', 'Bane', 'Area Effect'];
         const cardContainer = document.getElementById('card-container');
         let cards = Array.from(cardContainer.querySelectorAll('.card'));
     
