@@ -1337,6 +1337,34 @@ fetchAndDisplayCards();
             });
     }
     
+    document.getElementById('randomCardButton').addEventListener('click', function() {
+        showRandomCard();
+        document.getElementById('randomCardModal').style.display = 'block';
+    });
+    
+    document.getElementById('randomAgainButton').addEventListener('click', function() {
+        showRandomCard();
+    });
+    
+    function showRandomCard() {
+        if (allCards.length > 0) {
+            const randomCard = allCards[Math.floor(Math.random() * allCards.length)];
+            displayRandomCard(randomCard);
+        }
+    }
+    
+    function displayRandomCard(card) {
+        const contentDiv = document.getElementById('randomCardContent');
+        contentDiv.innerHTML = `
+            <h3>${card.name}</h3>
+            <p><strong>Type/Element:</strong> ${card.type}</p>
+            <p><strong>Format:</strong> ${card.format}</p>
+            <p>${card.description}</p>
+        `;
+    }
+    
+    // Close modal functionality (similar to previous modals)
+    
 
 function displayCards(cards) {
     const container = document.getElementById('card-container');
