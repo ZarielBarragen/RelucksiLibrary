@@ -726,18 +726,18 @@ fetchAndDisplayCards();
     
     
     function showRandomCard() {
-        if (allCards.length > 0) {
-            const randomCard = allCards[Math.floor(Math.random() * allCards.length)];
-            const contentDiv = document.getElementById('randomCardContent');
-            contentDiv.innerHTML = `
-                <h3>${randomCard.name}</h3>
-                <p><strong>Type/Element:</strong> ${randomCard.type}</p>
-                <p><strong>Format:</strong> ${randomCard.format}</p>
-                <p>${randomCard.description}</p>
-            `;
-        }
+    if (allCards.length > 0) {
+        const randomCard = allCards[Math.floor(Math.random() * allCards.length)];
+        const contentDiv = document.getElementById('randomCardContent');
+        contentDiv.innerHTML = `
+            <h3>${randomCard.name}</h3>
+            <p><strong>Type/Element:</strong> ${randomCard.type}</p>
+            <p><strong>Format:</strong> ${randomCard.format}</p>
+            <p>${randomCard.description}</p>
+        `;
     }
-    
+}
+
     
     // Close modal functionality if needed
     document.querySelector('.close').addEventListener('click', function() {
