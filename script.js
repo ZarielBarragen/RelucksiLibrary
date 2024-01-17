@@ -650,9 +650,16 @@ document.addEventListener('DOMContentLoaded', function() {
 // Call this function when the page loads
 fetchAndDisplayCards();
 
-    document.getElementById('infoButton').onclick = function() {
+    document.getElementById('infoButton').addEventListener('click', function() {
         document.getElementById('infoModal').style.display = 'block';
-    };
+        document.getElementById('randomCardModal').style.display = 'none'; // Ensure this is closed
+    });
+
+    document.getElementById('randomCardButton').addEventListener('click', function() {
+        document.getElementById('infoModal').style.display = 'none'; // Ensure this is closed
+        showRandomCard();
+        document.getElementById('randomCardModal').style.display = 'block';
+    });
     
     document.getElementsByClassName('close')[0].onclick = function() {
         document.getElementById('infoModal').style.display = 'none';
@@ -711,19 +718,12 @@ fetchAndDisplayCards();
             });
     }
     
-    document.getElementById('randomCardButton').addEventListener('click', function() {
-        showRandomCard();
-        document.getElementById('randomCardModal').style.display = 'block';
-    });
+    
     
     document.getElementById('randomAgainButton').addEventListener('click', function() {
         showRandomCard();
     });
     
-    document.getElementById('randomCardButton').addEventListener('click', function() {
-        showRandomCard();
-        document.getElementById('randomCardModal').style.display = 'block'; // Show the modal
-    });
     
     function showRandomCard() {
         if (allCards && allCards.length > 0) {
