@@ -168,7 +168,7 @@ main {
 #randomCardButton {
     #randomCardButton {
         padding: 10px 20px;
-        background-color: #4CAF50;
+        background-color: #824caf;
         color: white;
         border: none;
         border-radius: 5px;
@@ -198,9 +198,6 @@ main {
     cursor: pointer;
 }
 
-.modal {
-    display: none; // Modals are hidden by default
-    // Other styles...
-}
+
 
 

@@ -726,14 +726,10 @@ fetchAndDisplayCards();
     
     
     function showRandomCard() {
-        if (allCards && allCards.length > 0) {
-            // Get a random card
-            const randomIndex = Math.floor(Math.random() * allCards.length);
-            const randomCard = allCards[randomIndex];
-    
-            // Update the modal content with the random card's details
-            const modalContentDiv = document.getElementById('randomCardContent');
-            modalContentDiv.innerHTML = `
+        if (allCards.length > 0) {
+            const randomCard = allCards[Math.floor(Math.random() * allCards.length)];
+            const contentDiv = document.getElementById('randomCardContent');
+            contentDiv.innerHTML = `
                 <h3>${randomCard.name}</h3>
                 <p><strong>Type/Element:</strong> ${randomCard.type}</p>
                 <p><strong>Format:</strong> ${randomCard.format}</p>
@@ -741,6 +737,7 @@ fetchAndDisplayCards();
             `;
         }
     }
+    
     
     // Close modal functionality if needed
     document.querySelector('.close').addEventListener('click', function() {
