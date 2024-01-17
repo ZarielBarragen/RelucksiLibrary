@@ -720,24 +720,33 @@ fetchAndDisplayCards();
         showRandomCard();
     });
     
+    document.getElementById('randomCardButton').addEventListener('click', function() {
+        showRandomCard();
+        document.getElementById('randomCardModal').style.display = 'block'; // Show the modal
+    });
+    
     function showRandomCard() {
-        if (allCards.length > 0) {
-            const randomCard = allCards[Math.floor(Math.random() * allCards.length)];
-            displayRandomCard(randomCard);
+        if (allCards && allCards.length > 0) {
+            // Get a random card
+            const randomIndex = Math.floor(Math.random() * allCards.length);
+            const randomCard = allCards[randomIndex];
+    
+            // Update the modal content with the random card's details
+            const modalContentDiv = document.getElementById('randomCardContent');
+            modalContentDiv.innerHTML = `
+                <h3>${randomCard.name}</h3>
+                <p><strong>Type/Element:</strong> ${randomCard.type}</p>
+                <p><strong>Format:</strong> ${randomCard.format}</p>
+                <p>${randomCard.description}</p>
+            `;
         }
     }
     
-    function displayRandomCard(card) {
-        const contentDiv = document.getElementById('randomCardContent');
-        contentDiv.innerHTML = `
-            <h3>${card.name}</h3>
-            <p><strong>Type/Element:</strong> ${card.type}</p>
-            <p><strong>Format:</strong> ${card.format}</p>
-            <p>${card.description}</p>
-        `;
-    }
+    // Close modal functionality if needed
+    document.querySelector('.close').addEventListener('click', function() {
+        document.getElementById('randomCardModal').style.display = 'none';
+    });
     
-    // Close modal functionality (similar to previous modals)
     
     fetch('cards.json')
     .then(response => {
