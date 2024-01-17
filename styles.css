@@ -99,7 +99,7 @@ main {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-left: 5000px;
+    margin-left: 500px;
 }
 
 #infoButton:hover {
@@ -113,7 +113,7 @@ main {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-right: 5000px; /* Add some margin to the right */
+    margin-right: 500px; /* Add some margin to the right */
 }
 
 #randomCardButton:hover {
