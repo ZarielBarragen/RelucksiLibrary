@@ -727,6 +727,15 @@ function displayCards(cards) {
     });
 }
 
+    function fetchAndDisplayCards() {
+        fetch('cards.json')
+            .then(response => response.json())
+            .then(cards => {
+                allCards = cards; // Store all card data
+                displayCards(cards); // Display all cards initially
+            });
+    }
+
     
     function sortCards(sortValue) {
         const elementOrder = ['Fire', 'Water', 'Earth', 'Air', 'Light', 'Darkness', 'Metal', 'Nature', 'Ether', 'Chaos', 'Ice', 'Lightning', 'Psychic', 'Time', 'Cosmic', 'Toxic', 'Mystic'];
