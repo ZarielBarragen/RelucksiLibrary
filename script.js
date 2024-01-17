@@ -305,7 +305,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
                 
     ];
-    
+
     document.getElementById('infoButton').onclick = function() {
         document.getElementById('infoModal').style.display = 'block';
     };
@@ -334,4 +334,60 @@ document.addEventListener('DOMContentLoaded', function() {
         `;
         cardContainer.appendChild(cardElement);
     });
+
+    document.getElementById('filterDropdown').addEventListener('change', function() {
+        filterCards(this.value);
+    });
+    
+    document.getElementById('sortDropdown').addEventListener('change', function() {
+        sortCards(this.value);
+    });
+
+    function filterCards(filterValue) {
+        const cards = document.querySelectorAll('.card');
+        cards.forEach(card => {
+            // Check if the card matches the filter criteria
+            if (filterValue === "" || card.dataset.type === filterValue || card.dataset.format === filterValue) {
+                card.style.display = ''; // Show card if it matches
+            } else {
+                card.style.display = 'none'; // Hide card if it doesn't match
+            }
+        });
+    }
+    
+    function sortCards(sortValue) {
+        const cardContainer = document.getElementById('card-container');
+        let cards = Array.from(cardContainer.querySelectorAll('.card'));
+    
+        cards.sort((a, b) => {
+            let aValue, bValue;
+    
+            switch (sortValue) {
+                case 'element':
+                    aValue = a.dataset.type;
+                    bValue = b.dataset.type;
+                    break;
+                case 'format':
+                    aValue = a.dataset.format;
+                    bValue = b.dataset.format;
+                    break;
+                case 'name':
+                    aValue = a.querySelector('h3').textContent;
+                    bValue = b.querySelector('h3').textContent;
+                    break;
+                default:
+                    return 0; // No sorting
+            }
+    
+            // Compare for sorting
+            if (aValue < bValue) return -1;
+            if (aValue > bValue) return 1;
+            return 0;
+        });
+    
+        // Append sorted cards back to the container
+        cardContainer.innerHTML = '';
+        cards.forEach(card => cardContainer.appendChild(card));
+    }
+    
 });
