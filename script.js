@@ -677,6 +677,30 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
+    fetch('cards.json')
+    .then(response => response.json())
+    .then(cards => {
+        displayCards(cards);
+    });
+
+function displayCards(cards) {
+    const container = document.getElementById('card-container');
+    container.innerHTML = ''; // Clear existing content
+    cards.forEach(card => {
+        const cardElement = document.createElement('div');
+        cardElement.className = 'card';
+        cardElement.dataset.type = card.type;
+        cardElement.dataset.format = card.format;
+        cardElement.innerHTML = `
+            <h3>${card.name}</h3>
+            <p><strong>Type/Element:</strong> ${card.type}</p>
+            <p><strong>Format:</strong> ${card.format}</p>
+            <p>${card.description}</p>
+        `;
+        container.appendChild(cardElement);
+    });
+}
+
     
     function sortCards(sortValue) {
         const elementOrder = ['Fire', 'Water', 'Earth', 'Air', 'Light', 'Darkness', 'Metal', 'Nature', 'Ether', 'Chaos', 'Ice', 'Lightning', 'Psychic', 'Time', 'Cosmic', 'Toxic', 'Mystic'];
