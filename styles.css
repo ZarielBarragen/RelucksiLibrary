@@ -110,3 +110,18 @@ main {
     margin-right: 10px;
 }
 
+#randomCardButton {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block; /* Ensure it's not set to 'none' */
+    margin: 10px auto; /* Center the button */
+}
+
+#randomCardButton:hover {
+    background-color: #45a049;
+}
+
