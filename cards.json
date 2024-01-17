@@ -359,13 +359,265 @@
         "format": "Deceptive",
         "activation": "Look Intensely at the Card",
         "description": "Generates an illusion of the player that appears to be attacking opponents, causing confusion and making it challenging for opponents to discern the real player's actions."
+    },
+    {
+        "name": "Frostbite Aura",
+        "type": "Ice",
+        "format": "Enhancer",
+        "activation": "Clap the Card Between Hands",
+        "description": "Surrounds the player with an icy aura that not only provides protection against fire-based attacks but also freezes nearby opponents upon contact."
+    },
+    {
+        "name": "Temporal Reversal",
+        "type": "Time",
+        "format": "Manipulator",
+        "activation": "Flip the Card in the Air",
+        "description": "Allows the player to reverse the outcome of a recent event, effectively undoing the last action taken by themselves or an opponent."
+    },
+    {
+        "name": "Berserker's Fury",
+        "type": "Fire",
+        "format": "Enhancer",
+        "activation": "Swipe the Card Through the Air",
+        "description": "Envelops the player in an intense blaze, greatly increasing their attack power and speed but also making them susceptible to fire-based attacks."
+    },
+    {
+        "name": "Crystal Labyrinth",
+        "type": "Earth",
+        "format": "Trap",
+        "activation": "Trace a Symbol on the Card",
+        "description": "Creates a labyrinth of crystal walls that confuse and impede opponents' movements, making it challenging for them to navigate the battlefield."
+    },
+    {
+        "name": "Whirlwind Cyclone",
+        "type": "Air",
+        "format": "Ranged",
+        "activation": "Spin Around with the Card",
+        "description": "Summons a powerful cyclone that sweeps through the battlefield, lifting opponents into the air and causing damage through rapid spinning."
+    },
+    {
+        "name": "Nebula Surge",
+        "type": "Cosmic",
+        "format": "Ranged",
+        "activation": "Hold the Card to the Sky",
+        "description": "Calls upon the energy of distant nebulae to unleash a cosmic surge that can penetrate defenses and deal massive damage to opponents."
+    },
+    {
+        "name": "Venomous Nova",
+        "type": "Toxic",
+        "format": "Area Effect",
+        "activation": "Press the Card Against the Heart",
+        "description": "Triggers a toxic explosion, releasing a cloud of corrosive gas that lingers in the area, gradually weakening and poisoning opponents."
+    },
+    {
+        "name": "Astral Projection",
+        "type": "Ether",
+        "format": "Manipulator",
+        "activation": "Kiss the Card",
+        "description": "Allows the player to project their consciousness to a different location on the battlefield, enabling strategic reconnaissance or surprise attacks from a distance."
+    },
+    {
+        "name": "Spectral Blade Dance",
+        "type": "Mystic",
+        "format": "Enhancer",
+        "activation": "Swipe the Card Through the Air",
+        "description": "Conjures a set of spectral blades that orbit the player, enhancing their melee attacks and striking nearby opponents with each swing."
+    },
+    {
+        "name": "Ethereal Phalanx",
+        "type": "Ether",
+        "format": "Defender",
+        "activation": "Press the Card Against the Heart",
+        "description": "Forms an ethereal shield wall in front of the player, reducing incoming ranged attacks and providing temporary invulnerability to frontal assaults."
+    },
+    {
+        "name": "Shadowstep Assassin",
+        "type": "Darkness",
+        "format": "Manipulator",
+        "activation": "Cast the Card Toward an Opponent",
+        "description": "Allows the player to instantly teleport behind an opponent and deliver a devastating sneak attack, bypassing defenses."
+    },
+    {
+        "name": "Tempest Serpent",
+        "type": "Air",
+        "format": "Summoner",
+        "activation": "Clap the Card Between Hands",
+        "description": "Summons a serpentine creature of the skies that creates a powerful tornado, lifting opponents into the air and causing damage over time."
+    },
+    {
+        "name": "Frostbite Cleave",
+        "type": "Ice",
+        "format": "Ranged",
+        "activation": "Throw Card in Front",
+        "description": "Launches a freezing wave of energy that cleaves through opponents in its path, freezing them and causing damage."
+    },
+    {
+        "name": "Chaos Mirror",
+        "type": "Chaos",
+        "format": "Deceptive",
+        "activation": "Whisper to the Card",
+        "description": "Creates a mystical mirror that reflects any incoming attacks back at the opponent, with a twist—some attacks may be mirrored with unpredictable alterations."
+    },
+    {
+        "name": "Nature's Revival",
+        "type": "Nature",
+        "format": "Enhancer",
+        "activation": "Kiss the Card",
+        "description": "Embraces the player with the essence of nature, gradually restoring health and replenishing mana over time."
+    },
+    {
+        "name": "Gravity Well",
+        "type": "Time",
+        "format": "Trap",
+        "activation": "Flip the Card in the Air",
+        "description": "Activates a localized gravitational anomaly, pulling opponents toward a central point and temporarily reducing their movement speed."
+    },
+    {
+        "name": "Thunderstruck",
+        "type": "Lightning",
+        "format": "Ranged",
+        "activation": "Snap Fingers with the Card in Hand",
+        "description": "Calls down a series of electrifying bolts of lightning that strike multiple targets, chaining between opponents and causing paralysis."
+    },
+    {
+        "name": "Aqua Barrage",
+        "type": "Water",
+        "format": "Ranged",
+        "activation": "Throw Card in Front",
+        "description": "Unleashes a rapid series of high-pressure water projectiles towards the target, dealing damage and potentially knocking opponents back."
+    },
+    {
+        "name": "Tidal Wave",
+        "type": "Water",
+        "format": "Area Effect",
+        "activation": "Clap the Card Between Hands",
+        "description": "Summons a colossal tidal wave that crashes onto the battlefield, sweeping away opponents and causing damage over a wide area."
+    },
+    {
+        "name": "Hydro Shield",
+        "type": "Water",
+        "format": "Defender",
+        "activation": "Hold the Card to the Sky",
+        "description": "Creates a watery shield that absorbs incoming attacks and forms a protective barrier around the player, reducing damage taken."
+    },
+    {
+        "name": "Abyssal Grasp",
+        "type": "Water",
+        "format": "Trap",
+        "activation": "Cast the Card Toward an Opponent",
+        "description": "Sets a hidden trap that, when triggered, ensnares opponents in a watery vortex, rendering them immobile and vulnerable."
+    },
+    {
+        "name": "Aqua Serpent",
+        "type": "Water",
+        "format": "Summoner",
+        "activation": "Whisper to the Card",
+        "description": "Summons a serpentine water spirit that coils around opponents, squeezing and immobilizing them while dealing continuous damage."
+    },
+    {
+        "name": "Mist Veil",
+        "type": "Water",
+        "format": "Deceptive",
+        "activation": "Stare Intensely at an Opponent",
+        "description": "Shrouds the player in a dense mist, making them difficult to target and allowing for stealthy maneuvers."
+    },
+    {
+        "name": "Aqua Vortex",
+        "type": "Water",
+        "format": "Enhancer",
+        "activation": "Kiss the Card",
+        "description": "Surrounds the player with a swirling vortex of water, increasing their movement speed and attack power for a limited duration."
+    },
+    {
+        "name": "Whirlpool",
+        "type": "Water",
+        "format": "Area Effect",
+        "activation": "Flip the Card in the Air",
+        "description": "Creates a powerful whirlpool in a targeted area, pulling opponents towards the center and causing damage over time."
+    },
+    {
+        "name": "Coral Guardian",
+        "type": "Water",
+        "format": "Summoner",
+        "activation": "Throw Card on Ground",
+        "description": "Summons a guardian made of coral and seaweed, which can provide protection, heal the player, and create underwater terrain for strategic advantage."
+    },
+    {
+        "name": "Tsunami Surge",
+        "type": "Water",
+        "format": "Ranged",
+        "activation": "Snap Fingers with the Card in Hand",
+        "description": "Sends forth a massive wave that travels in a straight line, damaging all opponents in its path and potentially pushing them away."
+    },
+    {
+        "name": "Thunderstrike",
+        "type": "Lightning",
+        "format": "Ranged",
+        "activation": "Throw Card in Front",
+        "description": "Hurls a powerful bolt of lightning towards a target, causing a high-voltage explosion on impact and dealing heavy damage."
+    },
+    {
+        "name": "Electrostatic Field",
+        "type": "Lightning",
+        "format": "Area Effect",
+        "activation": "Clap the Card Between Hands",
+        "description": "Creates an electrified field that damages and paralyzes opponents within its radius, preventing them from taking actions."
+    },
+    {
+        "name": "Lightning Rod",
+        "type": "Lightning",
+        "format": "Defender",
+        "activation": "Hold the Card to the Sky",
+        "description": "Forms a lightning-infused shield that absorbs incoming attacks, converting them into energy that can be released as a powerful counterattack."
+    },{
+        "name": "Voltage Snare",
+        "type": "Lightning",
+        "format": "Trap",
+        "activation": "Cast the Card Toward an Opponent",
+        "description": "Sets a hidden trap that, when triggered, ensnares opponents in crackling electrical snares, immobilizing them and dealing continuous damage."
+    },
+    {
+        "name": "Stormcaller",
+        "type": "Lightning",
+        "format": "Summoner",
+        "activation": "Whisper to the Card",
+        "description": "Summons a mighty storm elemental that commands the power of lightning, unleashing devastating electrical attacks on opponents."
+    },
+    {
+        "name": "Chain Lightning",
+        "type": "Lightning",
+        "format": "Ranged",
+        "activation": "Snap Fingers with the Card in Hand",
+        "description": "Releases a bolt of lightning that arcs between multiple targets, chaining its destructive energy from one opponent to the next."
+    },
+    {
+        "name": "Electromagnetic Distortion",
+        "type": "Lightning",
+        "format": "Manipulator",
+        "activation": "Flip the Card in the Air",
+        "description": "Creates a localized electromagnetic field that disrupts the magical abilities and electronics of opponents, temporarily rendering them powerless."
+    },
+    {
+        "name": "Volt Surge",
+        "type": "Lightning",
+        "format": "Enhancer",
+        "activation": "Kiss the Card",
+        "description": "Charges the player's body with electrical energy, granting increased speed, agility, and the ability to electrify melee attacks for a limited duration."
+    },
+    {
+        "name": "Plasma Nova",
+        "type": "Lightning",
+        "format": "Area Effect",
+        "activation": "Swipe the Card Through the Air",
+        "description": "Unleashes a powerful burst of plasma energy that engulfs a targeted area, dealing widespread damage and leaving a lingering burn effect."
+    },
+    {
+        "name": "Tesla Coil Guardian",
+        "type": "Lightning",
+        "format": "Summoner",
+        "activation": "Throw Card on Ground",
+        "description": "Summons a guardian in the form of a giant Tesla coil that zaps nearby opponents with electrical discharges, creating a hazardous zone on the battlefield."
     }
 
-    
-    
-
-    
-    
-    
     
 ]
