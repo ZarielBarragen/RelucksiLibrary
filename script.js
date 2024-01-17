@@ -662,18 +662,21 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('sortDropdown').addEventListener('change', function() {
         sortCards(this.value);
     });
-
+    
     function filterCards(filterValue) {
         const cards = document.querySelectorAll('.card');
         cards.forEach(card => {
-            // Check if the card matches the filter criteria
-            if (filterValue === "" || card.dataset.type === filterValue || card.dataset.format === filterValue) {
+            const matchesElement = card.dataset.type === filterValue;
+            const matchesFormat = card.dataset.format === filterValue;
+    
+            if (filterValue === "" || matchesElement || matchesFormat) {
                 card.style.display = ''; // Show card if it matches
             } else {
                 card.style.display = 'none'; // Hide card if it doesn't match
             }
         });
     }
+    
     
     function sortCards(sortValue) {
         const elementOrder = ['Fire', 'Water', 'Earth', 'Air', 'Light', 'Darkness', 'Metal', 'Nature', 'Ether', 'Chaos', 'Ice', 'Lightning', 'Psychic', 'Time', 'Cosmic', 'Toxic', 'Mystic'];
