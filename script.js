@@ -1365,6 +1365,20 @@ fetchAndDisplayCards();
     
     // Close modal functionality (similar to previous modals)
     
+    fetch('cards.json')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(cards => {
+        allCards = cards;
+        displayCards(cards);
+    })
+    .catch(error => {
+        console.error('Fetching cards failed:', error);
+    });
 
 function displayCards(cards) {
     const container = document.getElementById('card-container');
