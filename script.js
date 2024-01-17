@@ -634,6 +634,14 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('infoModal').style.display = 'none';
     };
     
+    document.getElementById('filterDropdown').addEventListener('change', function() {
+        filterCards(this.value);
+    });
+
+    document.getElementById('sortDropdown').addEventListener('change', function() {
+        sortCards(this.value);
+    });
+
     window.onclick = function(event) {
         if (event.target == document.getElementById('infoModal')) {
             document.getElementById('infoModal').style.display = 'none';
@@ -654,14 +662,6 @@ document.addEventListener('DOMContentLoaded', function() {
         `;
         cardContainer.appendChild(cardElement);
     });
-
-    document.getElementById('filterDropdown').addEventListener('change', function() {
-        filterCards(this.value);
-    });
-    
-    document.getElementById('sortDropdown').addEventListener('change', function() {
-        sortCards(this.value);
-    });
     
     function filterCards(filterValue) {
         const cards = document.querySelectorAll('.card');
@@ -676,6 +676,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+    
     
     fetch('cards.json')
     .then(response => response.json())
