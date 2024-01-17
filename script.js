@@ -1,5 +1,7 @@
 
 document.addEventListener('DOMContentLoaded', function() {
+    const elementOrder = ['Fire', 'Water', 'Earth', 'Air', 'Light', 'Darkness', 'Metal', 'Nature', 'Ether', 'Chaos', 'Ice', 'Lightning', 'Psychic', 'Time', 'Cosmic', 'Toxic', 'Mystic'];
+    const formatOrder = ['Ranged', 'Summoner', 'Trap', 'Enhancer', 'Defender', 'Manipulator', 'Bane', 'Area Effect'];
     const cards = [
         {
             name: 'Inferno Blast',
@@ -684,12 +686,12 @@ document.addEventListener('DOMContentLoaded', function() {
     
             switch (sortValue) {
                 case 'element':
-                    aValue = a.dataset.type;
-                    bValue = b.dataset.type;
+                    aValue = elementOrder.indexOf(a.dataset.type);
+                    bValue = elementOrder.indexOf(b.dataset.type);
                     break;
                 case 'format':
-                    aValue = a.dataset.format;
-                    bValue = b.dataset.format;
+                    aValue = formatOrder.indexOf(a.dataset.format);
+                    bValue = formatOrder.indexOf(b.dataset.format);
                     break;
                 case 'name':
                     aValue = a.querySelector('h3').textContent;
@@ -709,5 +711,6 @@ document.addEventListener('DOMContentLoaded', function() {
         cardContainer.innerHTML = '';
         cards.forEach(card => cardContainer.appendChild(card));
     }
+    
     
 });
