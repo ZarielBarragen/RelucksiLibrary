@@ -144,6 +144,45 @@ main {
     width: 80%; /* Could be more or less, depending on screen size */
 }
 
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#infoButton {
+    #infoButton {
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    #infoButton:hover {
+        background-color: #45a049;
+    }
+}
+
+#randomCardButton {
+    #randomCardButton {
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-right: 20px; /* Add some margin to the right */
+    }
+    #randomCardButton:hover {
+        background-color: #45a049;
+    }
+}
+
+/* Make sure to remove any absolute positioning if previously applied to these buttons */
+
+
 /* Add a close button style if not already there */
 .close {
     color: #aaa;
