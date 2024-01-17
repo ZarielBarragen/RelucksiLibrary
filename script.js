@@ -231,9 +231,95 @@ document.addEventListener('DOMContentLoaded', function() {
             format: 'Trap',
             activation: 'Throw Card on Ground',
             description: 'Traps the opponent within a sacred rune on the ground. During its effect, the player\'s spoken words can manifest into reality, but there\'s a catch: the player must address their opponent with the utmost respect and honor. Any lapse in this respect will break the spell, making this card a test of both strategy and discipline.'
-        },        
+        },
+        {
+            name: 'Mystic Sword',
+            type: 'Ether',
+            format: 'Enhancer',
+            activation: 'Swipe the Card Through the Air',
+            description: 'Conjures a shimmering sword of pure energy that the player can wield, increasing their attack power and granting the ability to perform swift melee strikes.'
+        },
+        {
+            name: 'Teleportation',
+            type: 'Time',
+            format: 'Manipulator',
+            activation: 'Snap Fingers with the Card in Hand',
+            description: 'Allows the user to instantly teleport to any location they\'ve previously seen or have a mental image of, providing strategic positioning and escape options.'
+        },
+        {
+            name: 'Fireball',
+            type: 'Fire',
+            format: 'Ranged',
+            activation: 'Throw Card in Front',
+            description: 'Hurls a blazing fireball towards a target, causing fiery explosion and immediate damage to the area of impact.'
+        },
+        {
+            name: 'Chaos Ball',
+            type: 'Chaos',
+            format: 'Ranged',
+            activation: 'Spin Around with the Card',
+            description: 'Launches a flaming ball that, upon impact, creates chaotic distortions in reality, causing unpredictable and surreal effects in the surrounding area.'
+        },
+        {
+            name: 'Goop Troop',
+            type: 'Water',
+            format: 'Summoner',
+            activation: 'Clap the Card Between Hands',
+            description: 'Summons a horde of goopy and sad monsters that aggressively attack opponents, immobilizing them with sticky goo and dealing damage.'
+        },
+        {
+            name: 'Turntable',
+            type: 'Time',
+            format: 'Manipulator',
+            activation: 'Flip the Card in the Air',
+            description: 'Creates a zone where the game is forcibly turned into a turn-based format for a limited duration, adding strategic depth to the battle.'
+        },
+        {
+            name: 'Dragonic Mage',
+            type: 'Mystic',
+            format: 'Summoner',
+            activation: 'Cast the Card Toward an Opponent',
+            description: 'Conjures a wise and powerful dragonic mage that can either defend the player by creating protective barriers or enhance the player\'s attacks with arcane power.'
+        },
+        {
+            name: 'Astral Chains',
+            type: 'Ether',
+            format: 'Trap',
+            activation: 'Whisper to the Card',
+            description: 'Lays down invisible astral chains that, when triggered, immobilize and silence opponents, rendering them helpless for a brief duration.'
+        },
+        {
+            name: 'Frost Nova',
+            type: 'Ice',
+            format: 'Area Effect',
+            activation: 'Lift Card in Air + Blow on It',
+            description: 'Creates a localized frost storm, freezing all nearby opponents and objects, preventing them from taking any action for a short period.'
+        },
+        {
+            name: 'Ethereal Doppelganger',
+            type: 'Ether',
+            format: 'Manipulator',
+            activation: 'Press the Card Against the Heart',
+            description: 'Allows the player to temporarily create a shadowy, illusionary duplicate of themselves to confuse and distract opponents, potentially causing them to attack the wrong target.'
+        },
+        
+                
     ];
-
+    
+    document.getElementById('infoButton').onclick = function() {
+        document.getElementById('infoModal').style.display = 'block';
+    };
+    
+    document.getElementsByClassName('close')[0].onclick = function() {
+        document.getElementById('infoModal').style.display = 'none';
+    };
+    
+    window.onclick = function(event) {
+        if (event.target == document.getElementById('infoModal')) {
+            document.getElementById('infoModal').style.display = 'none';
+        }
+    };
+    
     const cardContainer = document.getElementById('card-container');
 
     cards.forEach(card => {
