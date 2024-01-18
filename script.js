@@ -849,5 +849,24 @@ document.addEventListener('DOMContentLoaded', function() {
             cards.forEach(card => cardContainer.appendChild(card));
         }
     
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('menuToggle').addEventListener('click', function() {
+                var menu = document.getElementById('menu');
+                if (menu.style.display === 'block') {
+                    menu.style.display = 'none';
+                } else {
+                    menu.style.display = 'block';
+                }
+            });
+        
+            // Optional: Close the menu if the user clicks outside of it
+            window.addEventListener('click', function(event) {
+                var menu = document.getElementById('menu');
+                if (event.target != document.getElementById('menuToggle') && event.target.closest('.menu') == null) {
+                    menu.style.display = 'none';
+                }
+            });
+        });
+        
     
 });
