@@ -100,6 +100,7 @@ main {
     border-radius: 5px;
     cursor: pointer;
     margin-left: 400px;
+    margin-bottom: 100px;
 }
 
 #infoButton:hover {
