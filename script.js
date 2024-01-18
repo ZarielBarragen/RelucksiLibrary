@@ -738,11 +738,6 @@ fetchAndDisplayCards();
     
     
     
-    document.getElementById('randomAgainButton').addEventListener('click', function() {
-        showRandomCard();
-    });
-    
-    
     function showRandomCard() {
     if (allCards.length > 0) {
         const randomCard = allCards[Math.floor(Math.random() * allCards.length)];
