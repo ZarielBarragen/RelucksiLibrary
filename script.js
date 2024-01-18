@@ -649,17 +649,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Call this function when the page loads
 fetchAndDisplayCards();
-
-    document.getElementById('infoButton').addEventListener('click', function() {
-        document.getElementById('infoModal').style.display = 'block';
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('infoButton').addEventListener('click', function() {
+            document.getElementById('infoModal').style.display = 'block';
+        });
+    
+        document.getElementById('randomCardButton').addEventListener('click', function() {
+            document.getElementById('infoModal').style.display = 'none'; // Ensure this is closed
+            showRandomCard();
+            document.getElementById('randomCardModal').style.display = 'block';
+        });
+        
     });
-
-    document.getElementById('randomCardButton').addEventListener('click', function() {
-        document.getElementById('infoModal').style.display = 'none'; // Ensure this is closed
-        showRandomCard();
-        document.getElementById('randomCardModal').style.display = 'block';
-    });
-
     function showRandomCard() {
         // Logic to select a random card from the allCards array
         // Make sure allCards is populated with your card data
@@ -743,18 +744,18 @@ fetchAndDisplayCards();
     });
     
     
-    //function showRandomCard() {
-    //if (allCards.length > 0) {
-       // const randomCard = allCards[Math.floor(Math.random() * allCards.length)];
-        //const contentDiv = document.getElementById('randomCardContent');
-       // contentDiv.innerHTML = `
-            //<h3>${randomCard.name}</h3>
-            //<p><strong>Type/Element:</strong> ${randomCard.type}</p>
-            //<p><strong>Format:</strong> ${randomCard.format}</p>
-            //<p>${randomCard.description}</p>
-        //`;
-    //}
-//}
+    function showRandomCard() {
+    if (allCards.length > 0) {
+        const randomCard = allCards[Math.floor(Math.random() * allCards.length)];
+        const contentDiv = document.getElementById('randomCardContent');
+        contentDiv.innerHTML = `
+            <h3>${randomCard.name}</h3>
+            <p><strong>Type/Element:</strong> ${randomCard.type}</p>
+            <p><strong>Format:</strong> ${randomCard.format}</p>
+            <p>${randomCard.description}</p>
+        `;
+    }
+}
 
     
     // Close modal functionality if needed
