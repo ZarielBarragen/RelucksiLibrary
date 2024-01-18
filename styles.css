@@ -141,29 +141,39 @@ main {
     cursor: pointer;
 }
 
-#menuToggle {
-    padding: 15px 30px; /* Increase padding for a larger button */
-    font-size: 1.2em; /* Increase font size if needed */
-    background-color: #4CAF50; /* Or any color you prefer */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-right: 10px; /* Ensure some space on the right */
-}
-
 .menu {
-    display: none; /* Keep the menu hidden initially */
-    /* The rest of your menu styles... */
+    height: 100%; /* Full height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    right: 0; /* Start from the right */
+    background-color: #111; /* Fallback color */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* Transition effect */
+    padding-top: 60px; /* Place content 60px from the top */
 }
 
-/* Ensure the menu is on top and visible */
 .menu a {
-    /* Style for menu items */
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
 }
 
 .menu a:hover {
-    /* Style for hovering over menu items */
+    color: #f1f1f1;
+}
+
+/* Style for the close button */
+.closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
 }
 
 

@@ -850,20 +850,21 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     
         document.addEventListener('DOMContentLoaded', function() {
+            // Open the menu
             document.getElementById('menuToggle').addEventListener('click', function() {
-                var menu = document.getElementById('menu');
-                if (menu.style.display === 'block') {
-                    menu.style.display = 'none';
-                } else {
-                    menu.style.display = 'block';
-                }
+                document.getElementById('menu').style.width = "250px"; // width of the menu
+            });
+        
+            // Close the menu when the close button is clicked
+            document.querySelector('.closebtn').addEventListener('click', function() {
+                document.getElementById('menu').style.width = "0";
             });
         
             // Optional: Close the menu if the user clicks outside of it
             window.addEventListener('click', function(event) {
                 var menu = document.getElementById('menu');
-                if (event.target != document.getElementById('menuToggle') && event.target.closest('.menu') == null) {
-                    menu.style.display = 'none';
+                if (event.target != document.getElementById('menuToggle') && event.target != menu && event.target.closest('.menu') == null) {
+                    menu.style.width = "0";
                 }
             });
         });
