@@ -650,15 +650,36 @@ document.addEventListener('DOMContentLoaded', function() {
 // Call this function when the page loads
 fetchAndDisplayCards();
 
-    document.getElementById('infoButton').addEventListener('click', function() {
-        document.getElementById('infoModal').style.display = 'block';
-    });
+document.getElementById('infoButton').addEventListener('click', function() {
+    // Hide the randomCardModal
+    document.getElementById('randomCardModal').style.display = 'none';
+    
+    // Show the infoModal
+    document.getElementById('infoModal').style.display = 'block';
+});
+
 
     document.getElementById('randomCardButton').addEventListener('click', function() {
-        document.getElementById('infoModal').style.display = 'none'; // Ensure this is closed
-        showRandomCard();
+        // Hide the infoModal
+        document.getElementById('infoModal').style.display = 'none';
+        
+        // Show the randomCardModal
         document.getElementById('randomCardModal').style.display = 'block';
+        
+        // Call the function to populate and handle the random card modal
+        showRandomCard();
     });
+    
+    // Close button for infoModal
+document.getElementById('infoModal').querySelector('.close').addEventListener('click', function() {
+    document.getElementById('infoModal').style.display = 'none';
+});
+
+// Close button for randomCardModal
+document.getElementById('randomCardModal').querySelector('.close').addEventListener('click', function() {
+    document.getElementById('randomCardModal').style.display = 'none';
+});
+
 
     function showRandomCard() {
         // Logic to select a random card from the allCards array
