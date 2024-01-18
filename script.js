@@ -680,7 +680,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('randomCardModal').querySelector('.close').addEventListener('click', function() {
             document.getElementById('randomCardModal').style.display = 'none';
         });
-
+    });
 
         function showRandomCard() {
             // Logic to select a random card from the allCards array
@@ -720,7 +720,7 @@ document.addEventListener('DOMContentLoaded', function() {
         };
         
         const cardContainer = document.getElementById('card-container');
-    });
+    
 
         cards.forEach(card => {
             const cardElement = document.createElement('div');
