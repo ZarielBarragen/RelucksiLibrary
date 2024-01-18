@@ -652,7 +652,6 @@ fetchAndDisplayCards();
 
     document.getElementById('infoButton').addEventListener('click', function() {
         document.getElementById('infoModal').style.display = 'block';
-        document.getElementById('randomCardModal').style.display = 'none'; // Ensure this is closed
     });
 
     document.getElementById('randomCardButton').addEventListener('click', function() {
@@ -660,6 +659,25 @@ fetchAndDisplayCards();
         showRandomCard();
         document.getElementById('randomCardModal').style.display = 'block';
     });
+
+    function showRandomCard() {
+        // Logic to select a random card from the allCards array
+        // Make sure allCards is populated with your card data
+        const randomIndex = Math.floor(Math.random() * allCards.length);
+        const randomCard = allCards[randomIndex];
+    
+        // Assuming you have an element with the ID 'randomCardContent' to display the card details
+        const contentDiv = document.getElementById('randomCardContent');
+        contentDiv.innerHTML = `
+            <h3>${randomCard.name}</h3>
+            <p><strong>Type/Element:</strong> ${randomCard.type}</p>
+            <p><strong>Format:</strong> ${randomCard.format}</p>
+            <p>${randomCard.description}</p>
+        `;
+    
+        // Show the modal
+        document.getElementById('randomCardModal').style.display = 'block';
+    }
     
     document.getElementsByClassName('close')[0].onclick = function() {
         document.getElementById('infoModal').style.display = 'none';
@@ -725,18 +743,18 @@ fetchAndDisplayCards();
     });
     
     
-    function showRandomCard() {
-    if (allCards.length > 0) {
-        const randomCard = allCards[Math.floor(Math.random() * allCards.length)];
-        const contentDiv = document.getElementById('randomCardContent');
-        contentDiv.innerHTML = `
-            <h3>${randomCard.name}</h3>
-            <p><strong>Type/Element:</strong> ${randomCard.type}</p>
-            <p><strong>Format:</strong> ${randomCard.format}</p>
-            <p>${randomCard.description}</p>
-        `;
-    }
-}
+    //function showRandomCard() {
+    //if (allCards.length > 0) {
+       // const randomCard = allCards[Math.floor(Math.random() * allCards.length)];
+        //const contentDiv = document.getElementById('randomCardContent');
+       // contentDiv.innerHTML = `
+            //<h3>${randomCard.name}</h3>
+            //<p><strong>Type/Element:</strong> ${randomCard.type}</p>
+            //<p><strong>Format:</strong> ${randomCard.format}</p>
+            //<p>${randomCard.description}</p>
+        //`;
+    //}
+//}
 
     
     // Close modal functionality if needed
