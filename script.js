@@ -646,209 +646,210 @@ document.addEventListener('DOMContentLoaded', function() {
             displayCards(cards); // Display all cards initially
         });
     }
+    document.addEventListener('DOMContentLoaded', function() {
+        // All your JavaScript code that interacts with the DOM goes here.   
+        // Call this function when the page loads
+        fetchAndDisplayCards();
 
-// Call this function when the page loads
-fetchAndDisplayCards();
-
-document.getElementById('infoButton').addEventListener('click', function() {
-    // Hide the randomCardModal
-    document.getElementById('randomCardModal').style.display = 'none';
-    
-    // Show the infoModal
-    document.getElementById('infoModal').style.display = 'block';
-});
-
-
-    document.getElementById('randomCardButton').addEventListener('click', function() {
-        // Hide the infoModal
-        document.getElementById('infoModal').style.display = 'none';
-        
-        // Show the randomCardModal
-        document.getElementById('randomCardModal').style.display = 'block';
-        
-        // Call the function to populate and handle the random card modal
-        showRandomCard();
-    });
-    
-    // Close button for infoModal
-document.getElementById('infoModal').querySelector('.close').addEventListener('click', function() {
-    document.getElementById('infoModal').style.display = 'none';
-});
-
-// Close button for randomCardModal
-document.getElementById('randomCardModal').querySelector('.close').addEventListener('click', function() {
-    document.getElementById('randomCardModal').style.display = 'none';
-});
-
-
-    function showRandomCard() {
-        // Logic to select a random card from the allCards array
-        // Make sure allCards is populated with your card data
-        const randomIndex = Math.floor(Math.random() * allCards.length);
-        const randomCard = allCards[randomIndex];
-    
-        // Assuming you have an element with the ID 'randomCardContent' to display the card details
-        const contentDiv = document.getElementById('randomCardContent');
-        contentDiv.innerHTML = `
-            <h3>${randomCard.name}</h3>
-            <p><strong>Type/Element:</strong> ${randomCard.type}</p>
-            <p><strong>Format:</strong> ${randomCard.format}</p>
-            <p>${randomCard.description}</p>
-        `;
-    
-        // Show the modal
-        document.getElementById('randomCardModal').style.display = 'block';
-    }
-    
-    document.getElementsByClassName('close')[0].onclick = function() {
-        document.getElementById('infoModal').style.display = 'none';
-    };
-    
-    document.getElementById('filterDropdown').addEventListener('change', function() {
-        filterCards(this.value);
-    });
-
-    document.getElementById('sortDropdown').addEventListener('change', function() {
-        sortCards(this.value);
-    });
-
-    window.onclick = function(event) {
-        if (event.target == document.getElementById('infoModal')) {
-            document.getElementById('infoModal').style.display = 'none';
-        }
-    };
-    
-    const cardContainer = document.getElementById('card-container');
-
-    cards.forEach(card => {
-        const cardElement = document.createElement('div');
-        cardElement.classList.add('card');
-        cardElement.innerHTML = `
-            <h3>${card.name}</h3>
-            <p><strong>Type/Element:</strong> ${card.type}</p>
-            <p><strong>Format:</strong> ${card.format}</p>
-            <p><strong>Activation Method:</strong> ${card.activation}</p>
-            <p>${card.description}</p>
-        `;
-        cardContainer.appendChild(cardElement);
-    });
-    
-    function filterCards(filterValue) {
-        const cards = document.querySelectorAll('.card');
-        cards.forEach(card => {
-            const matchesElement = card.dataset.type === filterValue;
-            const matchesFormat = card.dataset.format === filterValue;
-    
-            if (filterValue === "" || matchesElement || matchesFormat) {
-                card.style.display = ''; // Show card if it matches
-            } else {
-                card.style.display = 'none'; // Hide card if it doesn't match
-            }
+        document.getElementById('infoButton').addEventListener('click', function() {
+            // Hide the randomCardModal
+            document.getElementById('randomCardModal').style.display = 'none';
+            
+            // Show the infoModal
+            document.getElementById('infoModal').style.display = 'block';
         });
-    }
-    
-    
-    function fetchAndDisplayCards() {
-        fetch('cards.json')
-            .then(response => response.json())
-            .then(cards => {
-                allCards = cards; // Store all card data
-                displayCards(cards); // Display all cards initially
+
+
+            document.getElementById('randomCardButton').addEventListener('click', function() {
+                // Hide the infoModal
+                document.getElementById('infoModal').style.display = 'none';
+                
+                // Show the randomCardModal
+                document.getElementById('randomCardModal').style.display = 'block';
+                
+                // Call the function to populate and handle the random card modal
+                showRandomCard();
             });
-    }
-    
-    
-    
-    function showRandomCard() {
-    if (allCards.length > 0) {
-        const randomCard = allCards[Math.floor(Math.random() * allCards.length)];
-        const contentDiv = document.getElementById('randomCardContent');
-        contentDiv.innerHTML = `
-            <h3>${randomCard.name}</h3>
-            <p><strong>Type/Element:</strong> ${randomCard.type}</p>
-            <p><strong>Format:</strong> ${randomCard.format}</p>
-            <p>${randomCard.description}</p>
-        `;
-    }
-}
-
-    
-    // Close modal functionality if needed
-    document.querySelector('.close').addEventListener('click', function() {
-        document.getElementById('randomCardModal').style.display = 'none';
-    });
-    
-    
-    fetch('cards.json')
-    .then(response => {
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        return response.json();
-    })
-    .then(cards => {
-        allCards = cards;
-        displayCards(cards);
-    })
-    .catch(error => {
-        console.error('Fetching cards failed:', error);
-    });
-
-function displayCards(cards) {
-    const container = document.getElementById('card-container');
-    container.innerHTML = ''; // Clear existing content
-    cards.forEach(card => {
-        const cardElement = document.createElement('div');
-        cardElement.className = 'card';
-        cardElement.dataset.type = card.type;
-        cardElement.dataset.format = card.format;
-        cardElement.innerHTML = `
-            <h3>${card.name}</h3>
-            <p><strong>Type/Element:</strong> ${card.type}</p>
-            <p><strong>Format:</strong> ${card.format}</p>
-            <p>${card.description}</p>
-        `;
-        container.appendChild(cardElement);
-    });
-}
-
-    
-    function sortCards(sortValue) {
-        const elementOrder = ['Fire', 'Water', 'Earth', 'Air', 'Light', 'Darkness', 'Metal', 'Nature', 'Ether', 'Chaos', 'Ice', 'Lightning', 'Psychic', 'Time', 'Cosmic', 'Toxic', 'Mystic'];
-        const formatOrder = ['Ranged', 'Summoner', 'Trap', 'Enhancer', 'Defender', 'Manipulator', 'Bane', 'Area Effect'];
-        const cardContainer = document.getElementById('card-container');
-        let cards = Array.from(cardContainer.querySelectorAll('.card'));
-    
-        cards.sort((a, b) => {
-            let aValue, bValue;
-    
-            switch (sortValue) {
-                case 'element':
-                    aValue = elementOrder.indexOf(a.dataset.type);
-                    bValue = elementOrder.indexOf(b.dataset.type);
-                    break;
-                case 'format':
-                    aValue = formatOrder.indexOf(a.dataset.format);
-                    bValue = formatOrder.indexOf(b.dataset.format);
-                    break;
-                case 'name':
-                    aValue = a.querySelector('h3').textContent;
-                    bValue = b.querySelector('h3').textContent;
-                    break;
-                default:
-                    return 0; // No sorting
-            }
-    
-            // Compare for sorting
-            if (aValue < bValue) return -1;
-            if (aValue > bValue) return 1;
-            return 0;
+            
+            // Close button for infoModal
+        document.getElementById('infoModal').querySelector('.close').addEventListener('click', function() {
+            document.getElementById('infoModal').style.display = 'none';
         });
-    
-        // Append sorted cards back to the container
-        cardContainer.innerHTML = '';
-        cards.forEach(card => cardContainer.appendChild(card));
+
+        // Close button for randomCardModal
+        document.getElementById('randomCardModal').querySelector('.close').addEventListener('click', function() {
+            document.getElementById('randomCardModal').style.display = 'none';
+        });
+
+
+        function showRandomCard() {
+            // Logic to select a random card from the allCards array
+            // Make sure allCards is populated with your card data
+            const randomIndex = Math.floor(Math.random() * allCards.length);
+            const randomCard = allCards[randomIndex];
+        
+            // Assuming you have an element with the ID 'randomCardContent' to display the card details
+            const contentDiv = document.getElementById('randomCardContent');
+            contentDiv.innerHTML = `
+                <h3>${randomCard.name}</h3>
+                <p><strong>Type/Element:</strong> ${randomCard.type}</p>
+                <p><strong>Format:</strong> ${randomCard.format}</p>
+                <p>${randomCard.description}</p>
+            `;
+        
+            // Show the modal
+            document.getElementById('randomCardModal').style.display = 'block';
+        }
+        
+        document.getElementsByClassName('close')[0].onclick = function() {
+            document.getElementById('infoModal').style.display = 'none';
+        };
+        
+        document.getElementById('filterDropdown').addEventListener('change', function() {
+            filterCards(this.value);
+        });
+
+        document.getElementById('sortDropdown').addEventListener('change', function() {
+            sortCards(this.value);
+        });
+
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('infoModal')) {
+                document.getElementById('infoModal').style.display = 'none';
+            }
+        };
+        
+        const cardContainer = document.getElementById('card-container');
+
+        cards.forEach(card => {
+            const cardElement = document.createElement('div');
+            cardElement.classList.add('card');
+            cardElement.innerHTML = `
+                <h3>${card.name}</h3>
+                <p><strong>Type/Element:</strong> ${card.type}</p>
+                <p><strong>Format:</strong> ${card.format}</p>
+                <p><strong>Activation Method:</strong> ${card.activation}</p>
+                <p>${card.description}</p>
+            `;
+            cardContainer.appendChild(cardElement);
+        });
+        
+        function filterCards(filterValue) {
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                const matchesElement = card.dataset.type === filterValue;
+                const matchesFormat = card.dataset.format === filterValue;
+        
+                if (filterValue === "" || matchesElement || matchesFormat) {
+                    card.style.display = ''; // Show card if it matches
+                } else {
+                    card.style.display = 'none'; // Hide card if it doesn't match
+                }
+            });
+        }
+        
+        
+        function fetchAndDisplayCards() {
+            fetch('cards.json')
+                .then(response => response.json())
+                .then(cards => {
+                    allCards = cards; // Store all card data
+                    displayCards(cards); // Display all cards initially
+                });
+        }
+        
+        
+        
+        function showRandomCard() {
+        if (allCards.length > 0) {
+            const randomCard = allCards[Math.floor(Math.random() * allCards.length)];
+            const contentDiv = document.getElementById('randomCardContent');
+            contentDiv.innerHTML = `
+                <h3>${randomCard.name}</h3>
+                <p><strong>Type/Element:</strong> ${randomCard.type}</p>
+                <p><strong>Format:</strong> ${randomCard.format}</p>
+                <p>${randomCard.description}</p>
+            `;
+        }
     }
-    
+
+        
+        // Close modal functionality if needed
+        document.querySelector('.close').addEventListener('click', function() {
+            document.getElementById('randomCardModal').style.display = 'none';
+        });
+        
+        
+        fetch('cards.json')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(cards => {
+            allCards = cards;
+            displayCards(cards);
+        })
+        .catch(error => {
+            console.error('Fetching cards failed:', error);
+        });
+
+    function displayCards(cards) {
+        const container = document.getElementById('card-container');
+        container.innerHTML = ''; // Clear existing content
+        cards.forEach(card => {
+            const cardElement = document.createElement('div');
+            cardElement.className = 'card';
+            cardElement.dataset.type = card.type;
+            cardElement.dataset.format = card.format;
+            cardElement.innerHTML = `
+                <h3>${card.name}</h3>
+                <p><strong>Type/Element:</strong> ${card.type}</p>
+                <p><strong>Format:</strong> ${card.format}</p>
+                <p>${card.description}</p>
+            `;
+            container.appendChild(cardElement);
+        });
+     }
+
+        
+        function sortCards(sortValue) {
+            const elementOrder = ['Fire', 'Water', 'Earth', 'Air', 'Light', 'Darkness', 'Metal', 'Nature', 'Ether', 'Chaos', 'Ice', 'Lightning', 'Psychic', 'Time', 'Cosmic', 'Toxic', 'Mystic'];
+            const formatOrder = ['Ranged', 'Summoner', 'Trap', 'Enhancer', 'Defender', 'Manipulator', 'Bane', 'Area Effect'];
+            const cardContainer = document.getElementById('card-container');
+            let cards = Array.from(cardContainer.querySelectorAll('.card'));
+        
+            cards.sort((a, b) => {
+                let aValue, bValue;
+        
+                switch (sortValue) {
+                    case 'element':
+                        aValue = elementOrder.indexOf(a.dataset.type);
+                        bValue = elementOrder.indexOf(b.dataset.type);
+                        break;
+                    case 'format':
+                        aValue = formatOrder.indexOf(a.dataset.format);
+                        bValue = formatOrder.indexOf(b.dataset.format);
+                        break;
+                    case 'name':
+                        aValue = a.querySelector('h3').textContent;
+                        bValue = b.querySelector('h3').textContent;
+                        break;
+                    default:
+                        return 0; // No sorting
+                }
+        
+                // Compare for sorting
+                if (aValue < bValue) return -1;
+                if (aValue > bValue) return 1;
+                return 0;
+            });
+        
+            // Append sorted cards back to the container
+            cardContainer.innerHTML = '';
+            cards.forEach(card => cardContainer.appendChild(card));
+        }
+    });
     
 });
