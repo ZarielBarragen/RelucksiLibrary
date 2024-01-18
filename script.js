@@ -649,18 +649,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Call this function when the page loads
 fetchAndDisplayCards();
-    document.addEventListener('DOMContentLoaded', function() {
-        document.getElementById('infoButton').addEventListener('click', function() {
-            document.getElementById('infoModal').style.display = 'block';
-        });
-    
-        document.getElementById('randomCardButton').addEventListener('click', function() {
-            document.getElementById('infoModal').style.display = 'none'; // Ensure this is closed
-            showRandomCard();
-            document.getElementById('randomCardModal').style.display = 'block';
-        });
-        
+
+    document.getElementById('infoButton').addEventListener('click', function() {
+        document.getElementById('infoModal').style.display = 'block';
     });
+
+    document.getElementById('randomCardButton').addEventListener('click', function() {
+        document.getElementById('infoModal').style.display = 'none'; // Ensure this is closed
+        showRandomCard();
+        document.getElementById('randomCardModal').style.display = 'block';
+    });
+
     function showRandomCard() {
         // Logic to select a random card from the allCards array
         // Make sure allCards is populated with your card data
