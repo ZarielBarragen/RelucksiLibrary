@@ -646,9 +646,6 @@ document.addEventListener('DOMContentLoaded', function() {
             displayCards(cards); // Display all cards initially
         });
     }
-    document.addEventListener('DOMContentLoaded', function() {
-        // All your JavaScript code that interacts with the DOM goes here.   
-        // Call this function when the page loads
         fetchAndDisplayCards();
 
         document.getElementById('infoButton').addEventListener('click', function() {
@@ -680,7 +677,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('randomCardModal').querySelector('.close').addEventListener('click', function() {
             document.getElementById('randomCardModal').style.display = 'none';
         });
-    });
+    
 
         function showRandomCard() {
             // Logic to select a random card from the allCards array
