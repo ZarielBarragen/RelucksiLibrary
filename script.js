@@ -720,6 +720,7 @@ document.addEventListener('DOMContentLoaded', function() {
         };
         
         const cardContainer = document.getElementById('card-container');
+    });
 
         cards.forEach(card => {
             const cardElement = document.createElement('div');
@@ -850,6 +851,6 @@ document.addEventListener('DOMContentLoaded', function() {
             cardContainer.innerHTML = '';
             cards.forEach(card => cardContainer.appendChild(card));
         }
-    });
+    
     
 });
