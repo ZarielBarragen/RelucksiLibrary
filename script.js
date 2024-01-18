@@ -867,7 +867,36 @@ document.addEventListener('DOMContentLoaded', function() {
                     menu.style.width = "0";
                 }
             });
+
+            document.getElementById('deckCreatorButton').addEventListener('click', function() {
+                createRandomDeck();
+            });
         });
         
+        function createRandomDeck() {
+            const randomDeck = [];
+            const cardContainer = document.getElementById('card-container');
+        
+            // Assuming 'allCards' is an array with all your card data
+            for (let i = 0; i < 24; i++) {
+                // Push a random card onto the randomDeck array
+                randomDeck.push(allCards[Math.floor(Math.random() * allCards.length)]);
+            }
+        
+            // Now display the randomDeck
+            cardContainer.innerHTML = ''; // Clear existing cards
+            randomDeck.forEach(card => {
+                const cardElement = document.createElement('div');
+                cardElement.className = 'card';
+                // Populate cardElement with card data
+                cardElement.innerHTML = `
+                    <h3>${card.name}</h3>
+                    <p><strong>Type/Element:</strong> ${card.type}</p>
+                    <p><strong>Format:</strong> ${card.format}</p>
+                    <p>${card.description}</p>
+                `;
+                cardContainer.appendChild(cardElement);
+            });
+        }
     
 });
