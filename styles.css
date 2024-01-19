@@ -141,7 +141,7 @@ main {
     cursor: pointer;
 }
 
-.menu {
+#menu {
     height: 100%; /* Full height */
     width: 0; /* 0 width - change this with JavaScript */
     position: fixed; /* Stay in place */
@@ -154,7 +154,7 @@ main {
     padding-top: 60px; /* Place content 60px from the top */
 }
 
-.menu a {
+#menu a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
@@ -163,7 +163,7 @@ main {
     transition: 0.3s;
 }
 
-.menu a:hover {
+#menu a:hover {
     color: #f1f1f1;
 }
 
