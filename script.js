@@ -849,11 +849,11 @@ document.addEventListener('DOMContentLoaded', function() {
             cards.forEach(card => cardContainer.appendChild(card));
         }
     
-        document.addEventListener('DOMContentLoaded', function() {
+    
             // Open the menu
             document.getElementById('menuToggle').addEventListener('click', function() {
                 document.getElementById('menu').style.width = "250px"; // width of the menu
-                console.log("Test Menu");
+                console.log("Test Menu")
             });
         
             // Close the menu when the close button is clicked
@@ -872,7 +872,7 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('deckCreatorButton').addEventListener('click', function() {
                 createRandomDeck();
             });
-        });
+        
         
         function createRandomDeck() {
             const randomDeck = [];
