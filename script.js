@@ -758,6 +758,25 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.getElementById('infoModal').style.display = 'none';
             }
         };
+
+        document.getElementById('viewProfile').addEventListener('click', function() {
+            var code = prompt("Please enter your profile code:");
+            if (code) {
+                var profile = getProfileByCode(code);
+                if (profile) {
+                    alert(`Profile Name: ${profile.name}\nHP: ${profile.HP}\nCur: ${profile.Cur}`);
+                } else {
+                    alert("Profile not found!");
+                }
+            }
+        });
+        
+        // Function to retrieve a profile by code
+        function getProfileByCode(code) {
+            var profile = localStorage.getItem(code);
+            return profile ? JSON.parse(profile) : null;
+        }
+        
         
         const cardContainer = document.getElementById('card-container');
     
