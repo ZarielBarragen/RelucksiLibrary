@@ -678,6 +678,49 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('randomCardModal').style.display = 'none';
         });
     
+        document.getElementById('createProfile').addEventListener('click', function() {
+            var profileName = prompt("Please enter your profile name:");
+            if (profileName) {
+                createProfile(profileName);
+            }
+        });
+        
+        function createProfile(profileName) {
+            var profile = {
+                name: profileName,
+                HP: getRandomNumber(1000, 1000000),
+                Cur: getRandomNumber(1000, 1000000),
+                deck: generateRandomDeck(),
+                code: generateUniqueCode()
+            };
+            
+            // Save profile to local storage
+            localStorage.setItem(profile.code, JSON.stringify(profile));
+        
+            alert(`Profile created!\nHP: ${profile.HP}\nCur: ${profile.Cur}\nCode: ${profile.code}`);
+        }
+        
+        function getRandomNumber(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        
+        function generateRandomDeck() {
+            // This is a placeholder. You'd replace this with actual deck generation logic.
+            return ["Card1", "Card2", "Card3"];
+        }
+        
+        function generateUniqueCode() {
+            // This is a simple unique code generator using Date and a random number.
+            // For a production environment, you would want a more robust solution.
+            return Date.now().toString(36) + Math.random().toString(36).substr(2);
+        }
+        
+        // Function to retrieve a profile by code
+        function getProfileByCode(code) {
+            var profile = localStorage.getItem(code);
+            return profile ? JSON.parse(profile) : null;
+        }
+        
 
         function showRandomCard() {
             // Logic to select a random card from the allCards array
