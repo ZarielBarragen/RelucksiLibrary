@@ -690,35 +690,32 @@ document.addEventListener('DOMContentLoaded', function() {
                 name: profileName,
                 HP: getRandomNumber(1000, 1000000),
                 Cur: getRandomNumber(1000, 1000000),
-                deck: generateRandomDeck(),
-                code: generateUniqueCode()
+                deck: generateRandomDeck(), // Your deck generation logic here
+                code: generateProfileCode(7) // 7-character profile code
             };
             
             // Save profile to local storage
             localStorage.setItem(profile.code, JSON.stringify(profile));
-        
-            alert(`Profile created!\nHP: ${profile.HP}\nCur: ${profile.Cur}\nCode: ${profile.code}`);
+            
+            // Update the profile display in the menu
+            displayProfileInfo(profile);
         }
         
-        function getRandomNumber(min, max) {
-            return Math.floor(Math.random() * (max - min + 1)) + min;
+        function displayProfileInfo(profile) {
+            document.getElementById('profileNameDisplay').textContent = `Name: ${profile.name}`;
+            document.getElementById('profileHPDisplay').textContent = `HP: ${profile.HP}`;
+            document.getElementById('profileCurDisplay').textContent = `Cur: ${profile.Cur}`;
+            document.getElementById('profileCodeDisplay').textContent = `Code: ${profile.code}`;
         }
         
-        function generateRandomDeck() {
-            // This is a placeholder. You'd replace this with actual deck generation logic.
-            return ["Card1", "Card2", "Card3"];
-        }
-        
-        function generateUniqueCode() {
-            // This is a simple unique code generator using Date and a random number.
-            // For a production environment, you would want a more robust solution.
-            return Date.now().toString(36) + Math.random().toString(36).substr(2);
-        }
-        
-        // Function to retrieve a profile by code
-        function getProfileByCode(code) {
-            var profile = localStorage.getItem(code);
-            return profile ? JSON.parse(profile) : null;
+        function generateProfileCode(length) {
+            var result = '';
+            var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            var charactersLength = characters.length;
+            for (var i = 0; i < length; i++) {
+                result += characters.charAt(Math.floor(Math.random() * charactersLength));
+            }
+            return result;
         }
         
 
