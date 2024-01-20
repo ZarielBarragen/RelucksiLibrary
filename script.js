@@ -771,6 +771,26 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
+        document.getElementById('submitCode').addEventListener('click', function() {
+            var code = document.getElementById('profileCodeInput').value;
+            if (code) {
+                var profile = getProfileByCode(code);
+                if (profile) {
+                    // If a profile is found, you can display the information as needed.
+                    // For example, log it to the console or display it on the page.
+                    console.log(`Profile Name: ${profile.name}\nHP: ${profile.HP}\nCur: ${profile.Cur}`);
+                } else {
+                    // If no profile is found, inform the user.
+                    console.log("Profile not found!");
+                }
+            }
+        });
+
+        function getProfileByCode(code) {
+            var profile = localStorage.getItem(code);
+            return profile ? JSON.parse(profile) : null;
+        }
+        
         // Function to retrieve a profile by code
         function getProfileByCode(code) {
             var profile = localStorage.getItem(code);
