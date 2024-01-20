@@ -759,17 +759,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         };
 
-        document.getElementById('viewProfile').addEventListener('click', function() {
-            var code = prompt("Please enter your profile code:");
-            if (code) {
-                var profile = getProfileByCode(code);
-                if (profile) {
-                    alert(`Profile Name: ${profile.name}\nHP: ${profile.HP}\nCur: ${profile.Cur}`);
-                } else {
-                    alert("Profile not found!");
-                }
-            }
-        });
         
         document.getElementById('submitCode').addEventListener('click', function() {
             var code = document.getElementById('profileCodeInput').value;
@@ -790,7 +779,7 @@ document.addEventListener('DOMContentLoaded', function() {
             var profile = localStorage.getItem(code);
             return profile ? JSON.parse(profile) : null;
         }
-        
+
         // Function to retrieve a profile by code
         function getProfileByCode(code) {
             var profile = localStorage.getItem(code);
