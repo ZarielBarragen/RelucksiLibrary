@@ -777,12 +777,6 @@ document.addEventListener('DOMContentLoaded', function() {
             return profile ? JSON.parse(profile) : null;
         }
 
-        // Function to retrieve a profile by code
-        function getProfileByCode(code) {
-            var profile = localStorage.getItem(code);
-            return profile ? JSON.parse(profile) : null;
-        }
-        
         
         const cardContainer = document.getElementById('card-container');
     
