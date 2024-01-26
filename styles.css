@@ -196,6 +196,25 @@ main {
     cursor: pointer;
 }
 
+#menu #createProfileForm {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+#menu #createProfileForm input,
+#menu #createProfileForm button {
+    margin-bottom: 10px;
+}
+
+#menu #createProfileForm button {
+    padding: 10px;
+    background-color: #4CAF50; /* Or any color you prefer */
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
 
 
 

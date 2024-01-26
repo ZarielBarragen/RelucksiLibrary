@@ -912,6 +912,31 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     
     
+        document.getElementById('createProfileBtn').addEventListener('click', function() {
+            var profileName = document.getElementById('profileName').value;
+            if (profileName) {
+                createProfile(profileName);
+            } else {
+                alert("Please enter a profile name.");
+            }
+        });
+
+        function createProfile(profileName) {
+            // Logic for creating the profile
+            var profile = {
+                name: profileName,
+                HP: getRandomNumber(1000, 1000000),
+                Cur: getRandomNumber(1000, 1000000),
+                deck: generateRandomDeck(),
+                code: generateProfileCode(7)
+            };
+
+            // Save profile to local storage and update the profile display
+            localStorage.setItem(profile.code, JSON.stringify(profile));
+            displayProfileInfo(profile); // Implement this function to update the menu with the profile info
+        }
+
+
             // Open the menu
             document.getElementById('menuToggle').addEventListener('click', function() {
                 document.getElementById('menu').style.width = "250px"; // width of the menu
@@ -961,5 +986,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 cardContainer.appendChild(cardElement);
             });
         }
+        
+    
     
 });
