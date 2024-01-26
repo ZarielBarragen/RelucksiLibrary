@@ -677,36 +677,6 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('randomCardModal').querySelector('.close').addEventListener('click', function() {
             document.getElementById('randomCardModal').style.display = 'none';
         });
-    
-        document.getElementById('createProfile').addEventListener('click', function() {
-            var profileName = prompt("Please enter your profile name:");
-            if (profileName) {
-                createProfile(profileName);
-            }
-        });
-        
-        function createProfile(profileName) {
-            var profile = {
-                name: profileName,
-                HP: getRandomNumber(1000, 1000000),
-                Cur: getRandomNumber(1000, 1000000),
-                deck: generateRandomDeck(), // Your deck generation logic here
-                code: generateProfileCode(7) // 7-character profile code
-            };
-            
-            // Save profile to local storage
-            localStorage.setItem(profile.code, JSON.stringify(profile));
-            
-            // Update the profile display in the menu
-            displayProfileInfo(profile);
-        }
-        
-        function displayProfileInfo(profile) {
-            document.getElementById('profileNameDisplay').textContent = `Name: ${profile.name}`;
-            document.getElementById('profileHPDisplay').textContent = `HP: ${profile.HP}`;
-            document.getElementById('profileCurDisplay').textContent = `Cur: ${profile.Cur}`;
-            document.getElementById('profileCodeDisplay').textContent = `Code: ${profile.code}`;
-        }
         
         function generateProfileCode(length) {
             var result = '';
