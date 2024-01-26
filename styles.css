@@ -215,6 +215,44 @@ main {
     cursor: pointer;
 }
 
+/* Profile creation form styles */
+#menu #createProfileForm {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background: #f2f2f2; /* Light grey background for the form area */
+    border-radius: 5px;
+    margin: 10px; /* Adds some space around the form */
+}
+
+#menu #createProfileForm input {
+    padding: 10px;
+    margin-bottom: 10px; /* Adds space below the input field */
+    border: 1px solid #ccc; /* Light grey border for the input */
+    border-radius: 3px;
+}
+
+#menu #createProfileForm button {
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Green background for the button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Style for the profile code output area */
+#menu #profileCreationOutput {
+    margin-top: 10px; /* Adds space above the output area */
+    padding: 10px;
+    background: #e8f5e9; /* Light green background for visibility */
+    border: 1px solid #4CAF50; /* Green border to tie it to the button color */
+    border-radius: 3px;
+    color: #333; /* Dark text for readability */
+    font-weight: bold; /* Makes the text bold */
+    text-align: center; /* Centers the text */
+}
+
 
 
 

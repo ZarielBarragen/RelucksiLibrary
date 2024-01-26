@@ -688,6 +688,9 @@ document.addEventListener('DOMContentLoaded', function() {
             return result;
         }
         
+        function getRandomNumber(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
 
         function showRandomCard() {
             // Logic to select a random card from the allCards array
