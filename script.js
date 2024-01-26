@@ -692,6 +692,19 @@ document.addEventListener('DOMContentLoaded', function() {
             return Math.floor(Math.random() * (max - min + 1)) + min;
         }
 
+        function generateRandomDeck() {
+            // Assuming you have an array of all possible cards 'allCards'
+            var deckSize = 24; // or however many cards should be in a deck
+            var randomDeck = [];
+        
+            for (var i = 0; i < deckSize; i++) {
+                var randomIndex = Math.floor(Math.random() * allCards.length);
+                randomDeck.push(allCards[randomIndex]);
+            }
+        
+            return randomDeck;
+        }
+        
         function showRandomCard() {
             // Logic to select a random card from the allCards array
             // Make sure allCards is populated with your card data
