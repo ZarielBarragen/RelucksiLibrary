@@ -909,27 +909,9 @@ document.addEventListener('DOMContentLoaded', function() {
             // Append sorted cards back to the container
             cardContainer.innerHTML = '';
             cards.forEach(card => cardContainer.appendChild(card));
-        }
+        
     
     
-        document.getElementById('createProfileBtn').addEventListener('click', function() {
-            var profileName = document.getElementById('profileName').value;
-            if (profileName) {
-                createProfile(profileName);
-            } else {
-                alert("Please enter a profile name.");
-            }
-        });
-
-        function createProfile(profileName) {
-            // Logic for creating the profile
-            var profile = {
-                name: profileName,
-                HP: getRandomNumber(1000, 1000000),
-                Cur: getRandomNumber(1000, 1000000),
-                deck: generateRandomDeck(),
-                code: generateProfileCode(7)
-            };
 
             // Save profile to local storage and update the profile display
             localStorage.setItem(profile.code, JSON.stringify(profile));
