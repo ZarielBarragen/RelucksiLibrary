@@ -987,6 +987,30 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
         
-    
+        
+            document.getElementById('createProfileBtn').addEventListener('click', function() {
+                var profileName = document.getElementById('profileName').value.trim();
+                if (profileName) {
+                    createProfile(profileName);
+                } else {
+                    alert("Please enter a profile name.");
+                }
+            });
+        
+        function createProfile(profileName) {
+            var profile = {
+                name: profileName,
+                HP: getRandomNumber(1000, 1000000),
+                Cur: getRandomNumber(1000, 1000000),
+                deck: generateRandomDeck(),
+                code: generateProfileCode(7)
+            };
+            
+            // Save profile to local storage
+            localStorage.setItem(profile.code, JSON.stringify(profile));
+        
+            // Display the profile code in the output area
+            document.getElementById('profileCreationOutput').textContent = `Profile created! Code: ${profile.code}`;
+        }
     
 });
