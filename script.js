@@ -970,7 +970,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 name: profileName,
                 HP: getRandomNumber(1000, 1000000),
                 Cur: getRandomNumber(1000, 1000000),
-                deck: generateRandomDeck(),
+                deck: createRandomDeck(),
                 code: generateProfileCode(7)
             };
             
